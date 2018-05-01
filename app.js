@@ -12,9 +12,9 @@ var averageByGender = function(gender){
 
 
 var populationGreaterThanAverage = function(){
-    avg = (sumGender("males") + sumGender("females")) / 101;
+    avg = (sumGender("males") + sumGender("females")) / data.length;
     return data.filter(function(x){return x["males"] + x["females"] > avg;}).map(function(x){return x["age"]});
-}
+};
 
 var enterInfo = function(){
     info.innerHTML = "Total US Male Population: " + sumGender("males") + 
@@ -22,6 +22,6 @@ var enterInfo = function(){
                     "<br>Average US Male Age by Population: " + averageByGender("males") +
                     "<br>Average US Female Age by Population: " + averageByGender("females") +
                     "<br>Ages With Population Greater Than Average: " + populationGreaterThanAverage();
-}
+};
 
 enterInfo();
